@@ -95,19 +95,6 @@ finally
     StringMonitor.Exit("Updater");
 }
 ```
-
-## API Reference
-
-| Method                                      | Description                                                                 |
-| ------------------------------------------- | --------------------------------------------------------------------------- |
-| `Enter(string key)`                         | Blocks the current thread until it acquires the lock for the specified key. |
-| `Exit(string key)`                          | Releases the lock held on the specified key.                                |
-| `Wait(string key)`                          | Releases the lock and blocks until a pulse is received.                     |
-| `Wait(string key, int millisecondsTimeout)` | Same as above, but with a timeout in milliseconds.                          |
-| `Wait(string key, TimeSpan timeout)`        | Same as above, with a `TimeSpan` timeout.                                   |
-| `Pulse(string key)`                         | Wakes a single thread waiting on the specified key.                         |
-| `PulseAll(string key)`                      | Wakes all threads waiting on the specified key.                             |
-
 ## Best Practices
 
 * Use consistent key naming conventions (e.g., resource IDs or descriptive names).
