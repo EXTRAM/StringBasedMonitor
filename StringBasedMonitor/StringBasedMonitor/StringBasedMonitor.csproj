@@ -4,6 +4,12 @@
         <TargetFramework>netstandard2.0</TargetFramework>
         <LangVersion>latest</LangVersion>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <Title>StringBasedMonitor</Title>
+        <Authors>Alexander Mashin</Authors>
+        <Copyright>https://github.com/EXTRAM/StringBasedMonitor</Copyright>
+        <PackageProjectUrl>https://github.com/EXTRAM/StringBasedMonitor</PackageProjectUrl>
+        <PackageLicenseUrl>https://github.com/EXTRAM/StringBasedMonitor</PackageLicenseUrl>
+        <RepositoryUrl>https://github.com/EXTRAM/StringBasedMonitor</RepositoryUrl>
     </PropertyGroup>
 
 </Project>
