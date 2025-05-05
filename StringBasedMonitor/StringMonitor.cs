@@ -3,7 +3,7 @@ using System.Threading;
 
 namespace StringBasedMonitor;
 
-public static class StringBasedMonitor
+public static class StringMonitor
 {
     private static readonly MonitorStorage MonitorStorage = new();
     private static readonly object StringBasedMonitorLockObject = new();
@@ -48,10 +48,7 @@ public static class StringBasedMonitor
             lockObject = MonitorStorage.AddLock(value);
         }
 
-        if (Monitor.TryEnter(lockObject, millisecondsTimeout))
-        {
-            return true;
-        }
+        if (Monitor.TryEnter(lockObject, millisecondsTimeout)) return true;
 
         lock (StringBasedMonitorLockObject)
         {

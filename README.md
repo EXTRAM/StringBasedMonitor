@@ -1,6 +1,8 @@
 # StringBasedMonitor
 
-StringBasedMonitor is a lightweight .NET library that mirrors the API of `System.Threading.Monitor` but uses string values as lock keys instead of object instances. It enables developers to coordinate thread synchronization using semantic string identifiers, simplifying scenarios where locks naturally map to named resources.
+StringBasedMonitor is a lightweight .NET library that mirrors the API of `System.Threading.Monitor` but uses string
+values as lock keys instead of object instances. It enables developers to coordinate thread synchronization using
+semantic string identifiers, simplifying scenarios where locks naturally map to named resources.
 
 ## Features
 
@@ -95,6 +97,7 @@ finally
     StringMonitor.Exit("Updater");
 }
 ```
+
 ## Best Practices
 
 * Use consistent key naming conventions (e.g., resource IDs or descriptive names).
