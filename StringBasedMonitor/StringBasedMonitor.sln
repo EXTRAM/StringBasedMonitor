@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringBasedMonitor", "StringBasedMonitor.csproj", "{15D96069-19EA-4BCB-A4B4-403388869FE0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringBasedMonitor", "StringBasedMonitor\StringBasedMonitor.csproj", "{F669B939-E674-4683-AC57-B4B9DB526CC8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -8,9 +8,9 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{15D96069-19EA-4BCB-A4B4-403388869FE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{15D96069-19EA-4BCB-A4B4-403388869FE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{15D96069-19EA-4BCB-A4B4-403388869FE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{15D96069-19EA-4BCB-A4B4-403388869FE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F669B939-E674-4683-AC57-B4B9DB526CC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F669B939-E674-4683-AC57-B4B9DB526CC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F669B939-E674-4683-AC57-B4B9DB526CC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F669B939-E674-4683-AC57-B4B9DB526CC8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -4,5 +4,6 @@ namespace StringBasedMonitor
 {
     public class Class1
     {
+
     }
 }
