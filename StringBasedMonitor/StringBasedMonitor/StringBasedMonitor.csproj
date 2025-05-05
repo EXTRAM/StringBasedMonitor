@@ -11,9 +11,10 @@
         <PackageProjectUrl>https://github.com/EXTRAM/StringBasedMonitor</PackageProjectUrl>
         <PackageLicenseUrl>https://github.com/EXTRAM/StringBasedMonitor</PackageLicenseUrl>
         <RepositoryUrl>https://github.com/EXTRAM/StringBasedMonitor</RepositoryUrl>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
     </PropertyGroup>
     <ItemGroup>
-        <None Include="..\..\README.md"/>
+        <None Include="..\..\README.md" Pack="true" PackagePath="\"/>
     </ItemGroup>
 
 </Project>
