@@ -29,18 +29,16 @@ jobs:
       - name: Build solution
         run: dotnet build --configuration Release --no-restore
         
-      - name: Push Package to NuGet.org
-        if: ${{github.event.inputs.publish == 'true'}}
-        run: dotnet nuget push *.nupkg -k ${{ secrets.NUGET_API_KEY }} -s https://api.nuget.org/v3/index.json
+##      - name: Push Package to NuGet.org
+#        if: ${{github.event.inputs.publish == 'true'}}
+#        run: dotnet nuget push *.nupkg -k ${{ secrets.NUGET_API_KEY }} -s https://api.nuget.org/v3/index.json
 
-#      - name: Pack NuGet package
-#        if: ${{github.event.inputs.publish == 'true'}}
-#        run: dotnet pack --configuration Release --no-build --output ./artifacts
-#
-#      - name: Push package to NuGet.org
-#        if: ${{github.event.inputs.publish == 'true'}}
-#        env:
-#          NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
-#        run: dotnet nuget push ./artifacts/*.nupkg \
-#          --api-key $NUGET_API_KEY \
-#          --source https://api.nuget.org/v3/index.json
+      - name: Pack NuGet package
+        if: ${{github.event.inputs.publish == 'true'}}
+        run: dotnet pack --configuration Release --no-build --output ./artifacts
+
+      - name: Push package to NuGet.org
+        if: ${{github.event.inputs.publish == 'true'}}
+        env:
+          NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
+        run: dotnet nuget push ./artifacts/*.nupkg --api-key $NUGET_API_KEY --source https://api.nuget.org/v3/index.json
