@@ -48,6 +48,14 @@ finally
     StringMonitor.Exit("Order123");
 }
 ```
+OR
+```csharp
+// Acquire a lock on the resource named "Order123"
+using (new StringLock("Order123")
+{
+    // Protected section for Order123
+}
+```
 
 ### Waiting and Signaling
 
