@@ -8,11 +8,11 @@ on:
     inputs:
       publish:
         description: 'Set to "true" to pack & publish to NuGet'
-        required: false
-        default: 'false'
+        type: boolean
+        default: false
 
 jobs:
-  build:
+  build-and-publish:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -29,23 +29,12 @@ jobs:
       - name: Build solution
         run: dotnet build --configuration Release --no-restore
 
-  publish:
-    if: ${{ github.event.inputs.publish == 'true' }}
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Setup .NET SDK
-        uses: actions/setup-dotnet@v3
-        with:
-          dotnet-version: '8.x'
-
       - name: Pack NuGet package
+        if: ${{github.event.inputs.publish == 'true'}}
         run: dotnet pack --configuration Release --no-build --output ./artifacts
 
       - name: Push package to NuGet.org
+        if: ${{github.event.inputs.publish == 'true'}}
         env:
           NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
         run: dotnet nuget push ./artifacts/*.nupkg \
