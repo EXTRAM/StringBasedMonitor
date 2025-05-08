@@ -28,6 +28,10 @@ jobs:
 
       - name: Build solution
         run: dotnet build --configuration Release --no-restore
+        
+      - name: Push Package to NuGet.org
+        if: ${{github.event.inputs.publish == 'true'}}
+        run: dotnet nuget push *.nupkg -k ${{ secrets.NUGET_API_KEY }} -s https://api.nuget.org/v3/index.json
 
 #      - name: Pack NuGet package
 #        if: ${{github.event.inputs.publish == 'true'}}
@@ -40,11 +44,3 @@ jobs:
 #        run: dotnet nuget push ./artifacts/*.nupkg \
 #          --api-key $NUGET_API_KEY \
 #          --source https://api.nuget.org/v3/index.json
-
-      - name: Publish NuGet
-        if: ${{github.event.inputs.publish == 'true'}}
-        uses: brandedoutcast/publish-nuget@v2.5.5
-        with:
-          PROJECT_FILE_PATH: ''
-          NUGET_KEY: ${{ secrets.NUGET_API_KEY }}
-          NUGET_SOURCE: "https://api.nuget.org/v3/index.json"
